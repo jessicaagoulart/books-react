@@ -193,3 +193,49 @@ export const Button = styled.button`
   }
   `}
 `;
+
+export const Error = styled.button`
+  width: 300px;
+  height: 100px;
+
+  border: 2px solid rgba(51, 51, 51, 0.2);
+  box-sizing: border-box;
+
+  box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
+  border-radius: 4px;
+
+  background-color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 4px;
+
+  color: #999;
+  font-size: 12px;
+  font-weight: 500;
+
+  padding: 16px;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  ${({ disabled }) =>
+    !disabled &&
+    `
+    &:hover {
+    transform: scale(1.01);
+  }
+  `}
+`;
+
+export const ErrorContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+`;

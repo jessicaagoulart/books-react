@@ -119,6 +119,8 @@ export const Title = styled.text`
   line-height: 40px;
   font-weight: 600;
   color: #333333;
+
+  text-overflow: ellipsis;
 `;
 
 export const Authors = styled.div`

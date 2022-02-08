@@ -18,13 +18,15 @@ import {
   ButtonContainer,
   Button,
   IconLeft,
+  Error,
+  ErrorContainer,
 } from './styles';
 
 import { TailSpin } from 'react-loader-spinner';
 
 import { logoSvg, titleSvg, logout, chevron } from '../../assets/images';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 
@@ -41,6 +43,7 @@ export function Home() {
   const [totalPages, setTotalPages] = useState();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
 
   const [disabledLeft, setDisabledLeft] = useState(true);
   const [disabledRight, setDisabledRight] = useState(false);
@@ -59,6 +62,7 @@ export function Home() {
 
   async function fetchData() {
     try {
+      setError(false);
       api
         .get(`/books?page=${page}&amount=10`)
         .then((response) => {
@@ -71,9 +75,11 @@ export function Home() {
           console.log(data);
         })
         .catch(({ response }) => {
-          console.log(response);
+          setError(true);
         });
-    } catch {}
+    } catch {
+      setError(true);
+    }
   }
 
   function handleBack() {
@@ -127,11 +133,12 @@ export function Home() {
           </Logout>
         </User>
       </Header>
-      {loading ? (
+      {loading && !error && (
         <Load>
           <TailSpin color="#b22e6f" height={80} width={80} />
         </Load>
-      ) : (
+      )}
+      {!loading && !error && (
         <>
           <Content>
             {data.map((item) => {
@@ -165,6 +172,13 @@ export function Home() {
 
           <Modal data={dataModal} />
         </>
+      )}
+      {error && (
+        <ErrorContainer>
+          <Error onClick={() => window.location.reload()}>
+            Algo errado ocorreu. Clique para tentar novamente.
+          </Error>
+        </ErrorContainer>
       )}
     </Container>
   );
