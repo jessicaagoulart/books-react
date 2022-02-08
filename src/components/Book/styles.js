@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 272px;
+  width: 290px;
   height: 160px;
 
-  padding: 16px;
+  padding: 16px 8px 16px 16px;
   margin: 8px;
 
   display: flex;
@@ -38,7 +38,7 @@ export const Content = styled.div`
 
 export const Title = styled.text`
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   color: #333333;
 `;
@@ -52,13 +52,21 @@ export const Author = styled.text`
   color: #ab2680;
   font-size: 12px;
   font-weight: 400;
-  line-height: 20px;
 `;
 
 export const Info = styled.text`
   font-size: 12px;
-  line-height: 20px;
 
   color: #999;
   font-weight: 400;
+`;
+
+export const ContainerInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

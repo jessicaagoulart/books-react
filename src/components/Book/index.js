@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from '../../screens/Home/styles';
 
 import {
   Container,
@@ -9,6 +10,8 @@ import {
   Author,
   Info,
   ImageContainer,
+  ContainerInfo,
+  HeaderContainer,
 } from './styles';
 
 export function Book({ data }) {
@@ -19,16 +22,20 @@ export function Book({ data }) {
       </ImageContainer>
 
       <Content>
-        <Title>{data.title}</Title>
-        <Authors>
-          {data.authors.map((author) => {
-            return <Author>{author}</Author>;
-          })}
-        </Authors>
+        <HeaderContainer>
+          <Title>{data.title}</Title>
+          <Authors>
+            {data.authors.map((author) => {
+              return <Author>{author}</Author>;
+            })}
+          </Authors>
+        </HeaderContainer>
 
-        <Info>{data.pageCount} páginas</Info>
-        <Info>Editora {data.publisher}</Info>
-        <Info>Publicado em {data.published}</Info>
+        <ContainerInfo>
+          <Info>{data.pageCount} páginas</Info>
+          <Info>Editora {data.publisher}</Info>
+          <Info>Publicado em {data.published}</Info>
+        </ContainerInfo>
       </Content>
     </Container>
   );
