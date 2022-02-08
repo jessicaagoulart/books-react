@@ -76,7 +76,6 @@ export function Form() {
         .catch(({ response }) => {
           setIsError(true);
           setErrorMessage('Email e/ou senha incorretos.');
-          console.log(response);
         });
 
       /*       reset(); */

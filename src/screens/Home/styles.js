@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -20,7 +19,6 @@ export const Container = styled.div`
     #e6dee9 100%
   );
   background-blend-mode: darken;
-
   background-size: contain;
 `;
 
@@ -185,4 +183,13 @@ export const Button = styled.button`
   border-radius: 16px;
 
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  ${({ disabled }) =>
+    !disabled &&
+    `
+    &:hover {
+    transform: scale(1.2);
+  }
+  `}
 `;

@@ -24,9 +24,12 @@ import { TailSpin } from 'react-loader-spinner';
 
 import { logoSvg, titleSvg, logout, chevron } from '../../assets/images';
 
-import { Book } from '../../components/Book';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
+
+import { Book } from '../../components/Book';
+import { Modal } from '../../components/Modal';
 
 export function Home() {
   const userObj = localStorage.getItem('@ioasys:user');
@@ -41,6 +44,10 @@ export function Home() {
 
   const [disabledLeft, setDisabledLeft] = useState(true);
   const [disabledRight, setDisabledRight] = useState(false);
+
+  const [dataModal, setDataModal] = useState({});
+
+  const dispatch = useDispatch();
 
   function handleLogout() {
     localStorage.removeItem('@ioasys:token');
@@ -89,13 +96,20 @@ export function Home() {
     }
   }
 
+  function handleModal(data) {
+    setDataModal(data);
+
+    dispatch({
+      type: 'SHOW_MODAL',
+      payload: {
+        show: true,
+      },
+    });
+  }
+
   useEffect(() => {
     fetchData();
   }, [page]);
-
-  console.log('direita', disabledRight);
-
-  console.log('esquerda', disabledLeft);
 
   return (
     <Container>
@@ -121,7 +135,13 @@ export function Home() {
         <>
           <Content>
             {data.map((item) => {
-              return <Book key={item.id} data={item} />;
+              return (
+                <Book
+                  key={`${item.id}`}
+                  data={item}
+                  onClick={() => handleModal(item)}
+                />
+              );
             })}
           </Content>
 
@@ -142,6 +162,8 @@ export function Home() {
               </Button>
             </ButtonContainer>
           </Footer>
+
+          <Modal data={dataModal} />
         </>
       )}
     </Container>

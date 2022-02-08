@@ -10,7 +10,7 @@ import {
   titlePng,
 } from '../../assets/images';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 
@@ -45,7 +45,13 @@ export function Login() {
         }
       }) // then
       .catch(({ response }) => {
-        console.log(response);
+        if (response.status === 401) {
+          localStorage.removeItem('@ioasys:token');
+          localStorage.removeItem('@ioasys:refresh-token');
+          localStorage.removeItem('@ioasys:user');
+
+          navigate('/Login');
+        }
       });
   }
 

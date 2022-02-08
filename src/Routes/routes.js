@@ -1,7 +1,6 @@
 import React from 'react';
 import PrivateRoute from './private';
 import { BrowserRouter, Routes as Router, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { Home } from '../screens/Home';
 import { Login } from '../screens/Login';
 

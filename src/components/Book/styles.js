@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.button`
   width: 290px;
   height: 160px;
 
@@ -16,10 +16,21 @@ export const Container = styled.div`
 
   box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
   border-radius: 4px;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  border: none;
 `;
 
 export const Image = styled.img`
   width: 81px;
+
+  filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.3));
 `;
 
 export const ImageContainer = styled.div`
@@ -29,18 +40,40 @@ export const ImageContainer = styled.div`
 
 export const Content = styled.div`
   display: flex;
+
+  height: 100%;
   width: 100%;
 
   flex-direction: column;
 
   justify-content: space-between;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const ContentScroll = styled.div`
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding-right: 5px;
 `;
 
 export const Title = styled.text`
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+
   color: #333333;
+
+  text-align: left;
 `;
 
 export const Authors = styled.div`
@@ -52,6 +85,9 @@ export const Author = styled.text`
   color: #ab2680;
   font-size: 12px;
   font-weight: 400;
+  line-height: 20px;
+
+  text-align: left;
 `;
 
 export const Info = styled.text`
@@ -59,6 +95,10 @@ export const Info = styled.text`
 
   color: #999;
   font-weight: 400;
+
+  line-height: 20px;
+
+  text-align: left;
 `;
 
 export const ContainerInfo = styled.div`

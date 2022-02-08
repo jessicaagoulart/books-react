@@ -7,3 +7,5 @@ export { default as logoSvg } from './logoSvg.svg';
 export { default as titleSvg } from './titleSvg.svg';
 export { default as logout } from './logout.svg';
 export { default as chevron } from './chevron.svg';
+export { default as close } from './x.svg';
+export { default as quotes } from './quotes.svg';
