@@ -48,6 +48,11 @@ export const Button = styled.button`
   border: none;
 
   cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ButtonText = styled.text`

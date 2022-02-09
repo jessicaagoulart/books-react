@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 
 import Input from '../Input';
+import { TailSpin } from 'react-loader-spinner';
 
 export function Form() {
   const formRef = useRef(null);
@@ -25,9 +26,11 @@ export function Form() {
   const dispatch = useDispatch();
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function handleSubmit(data, { reset }) {
     try {
+      setLoading(true);
       formRef.current.setErrors({});
       setIsError(false);
 
@@ -74,12 +77,14 @@ export function Form() {
           }
         }) // then
         .catch(({ response }) => {
+          setLoading(false);
           setIsError(true);
           setErrorMessage('Email e/ou senha incorretos.');
         });
 
       /*       reset(); */
     } catch (err) {
+      setLoading(false);
       const validationErrors = {};
 
       if (err instanceof Yup.ValidationError) {
@@ -105,7 +110,11 @@ export function Form() {
 
         <ButtonContainer>
           <Button type="submit">
-            <ButtonText>Entrar</ButtonText>
+            {loading ? (
+              <TailSpin width={20} color="#B22E6F" />
+            ) : (
+              <ButtonText>Entrar</ButtonText>
+            )}
           </Button>
         </ButtonContainer>
       </FormStyled>

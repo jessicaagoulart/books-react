@@ -171,10 +171,14 @@ export function Home() {
             </PageCounter>
 
             <ButtonContainer>
-              <Button onClick={handleBack} disabled={disabledLeft}>
+              <Button onClick={handleBack} disabled={disabledLeft} type="left">
                 <IconLeft src={chevron} disabled={disabledLeft} />
               </Button>
-              <Button onClick={handleFront} disabled={disabledRight}>
+              <Button
+                onClick={handleFront}
+                disabled={disabledRight}
+                type="right"
+              >
                 <Icon src={chevron} disabled={disabledRight} />
               </Button>
             </ButtonContainer>

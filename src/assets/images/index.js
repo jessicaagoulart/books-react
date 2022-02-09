@@ -9,3 +9,4 @@ export { default as logout } from './logout.svg';
 export { default as chevron } from './chevron.svg';
 export { default as close } from './x.svg';
 export { default as quotes } from './quotes.svg';
+export { default as defaultBook } from './default-book.png';

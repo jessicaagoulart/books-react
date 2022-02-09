@@ -34,4 +34,8 @@ export const InputField = styled.input`
   font-size: 16px;
   line-height: 24px;
   color: #fff;
+
+  @media (max-width: 400px) {
+    width: 300px;
+  }
 `;

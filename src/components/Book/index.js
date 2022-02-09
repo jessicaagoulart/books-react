@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Scrollbars } from 'react-custom-scrollbars';
+import { defaultBook } from '../../assets/images';
+
 import {
   Container,
   Image,
@@ -16,27 +17,28 @@ import {
 } from './styles';
 
 export function Book({ data, onClick }) {
+  const { imageUrl, title, authors, pageCount, publisher, published } = data;
   return (
     <Container onClick={onClick}>
       <ImageContainer>
-        <Image src={data.imageUrl} />
+        <Image src={imageUrl ? imageUrl : defaultBook} />
       </ImageContainer>
 
       <Content>
         <ContentScroll>
           <HeaderContainer>
-            <Title>{data.title}</Title>
+            <Title>{title}</Title>
             <Authors>
-              {data.authors.map((author) => {
+              {authors.map((author) => {
                 return <Author key={`${author}`}>{author}</Author>;
               })}
             </Authors>
           </HeaderContainer>
 
           <ContainerInfo>
-            <Info>{data.pageCount} páginas</Info>
-            <Info>Editora {data.publisher}</Info>
-            <Info>Publicado em {data.published}</Info>
+            <Info>{pageCount} páginas</Info>
+            <Info>Editora {publisher}</Info>
+            <Info>Publicado em {published}</Info>
           </ContainerInfo>
         </ContentScroll>
       </Content>

@@ -18,6 +18,54 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
+export const ModalContent = styled.div`
+  display: flex;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  overflow: auto;
+
+  width: 769px;
+  height: 608px;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  background: #ffffff;
+  box-shadow: 0px 16px 80px rgba(0, 0, 0, 0.32);
+  border-radius: 4px;
+
+  padding: 48px;
+
+  padding-right: 33px;
+
+  @media (max-width: 875px) {
+    width: 90%;
+    height: 100%;
+
+    margin: 64px 16px 16px;
+    padding: 24px;
+
+    position: relative;
+
+    display: flex;
+    align-self: center;
+
+    transform: unset;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    flex-direction: column;
+    overflow: scroll;
+  }
+`;
+
 export const Content = styled.div`
   display: flex;
 
@@ -25,8 +73,11 @@ export const Content = styled.div`
   width: 100%;
 
   flex-direction: column;
-
   overflow: hidden;
+
+  @media (max-width: 875px) {
+    overflow: hidden;
+  }
 `;
 
 export const ContentScroll = styled.div`
@@ -47,6 +98,19 @@ export const ContentScroll = styled.div`
     display: none;
   }
   padding-right: 10px;
+`;
+
+export const ModalContentScroll = styled.div`
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 875px) {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 export const Button = styled.button`
@@ -79,39 +143,30 @@ export const Button = styled.button`
 
 export const Icon = styled.img``;
 
-export const ModalContent = styled.div`
-  display: flex;
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  overflow: auto;
-
-  width: 769px;
-  height: 608px;
-
-  max-width: 100%;
-  max-height: 100%;
-
-  background: #ffffff;
-  box-shadow: 0px 16px 80px rgba(0, 0, 0, 0.32);
-  border-radius: 4px;
-
-  padding: 48px;
-
-  padding-right: 33px;
-`;
-
 export const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
 
   margin-right: 40px;
+
+  @media (max-width: 875px) {
+    display: flex;
+
+    justify-content: center;
+    margin-right: 0px;
+    margin-bottom: 24px;
+
+    width: 240px;
+    height: 351px;
+  }
 `;
-export const Image = styled.img``;
+
+export const Image = styled.img`
+  @media (max-width: 875px) {
+    width: 240px;
+    height: 351px;
+  }
+`;
 
 export const Header = styled.div``;
 
