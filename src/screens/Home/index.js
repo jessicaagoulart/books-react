@@ -26,7 +26,7 @@ import { TailSpin } from 'react-loader-spinner';
 
 import { logoSvg, titleSvg, logout, chevron } from '../../assets/images';
 
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 
@@ -49,6 +49,8 @@ export function Home() {
   const [disabledRight, setDisabledRight] = useState(false);
 
   const [dataModal, setDataModal] = useState({});
+
+  const modal = useSelector((state) => state.modal);
 
   const dispatch = useDispatch();
 
@@ -116,6 +118,14 @@ export function Home() {
   useEffect(() => {
     fetchData();
   }, [page]);
+
+  useEffect(() => {
+    if (modal.show) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [modal.show]);
 
   return (
     <Container>

@@ -19,21 +19,14 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  display: flex;
+
   height: 100%;
   width: 100%;
 
-  display: flex;
-
-  overflow: hidden;
-
   flex-direction: column;
 
-  align-items: flex-start;
-  justify-content: space-between;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
 `;
 
 export const ContentScroll = styled.div`
@@ -45,7 +38,15 @@ export const ContentScroll = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  padding-right: 15px;
+  overflow-y: auto;
+  position: relative;
+
+  transition: all 0.2s ease-in-out;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  padding-right: 10px;
 `;
 
 export const Button = styled.button`

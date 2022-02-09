@@ -13,7 +13,6 @@ export const Container = styled.button`
   align-items: space-between;
 
   background-color: #fff;
-
   box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
   border-radius: 4px;
 
@@ -24,6 +23,7 @@ export const Container = styled.button`
     transform: scale(1.02);
   }
 
+  overflow: hidden;
   border: none;
 `;
 
@@ -45,12 +45,9 @@ export const Content = styled.div`
   width: 100%;
 
   flex-direction: column;
-
   justify-content: space-between;
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
 `;
 
 export const ContentScroll = styled.div`
@@ -60,10 +57,17 @@ export const ContentScroll = styled.div`
   width: 100%;
 
   flex-direction: column;
-
   justify-content: space-between;
 
-  padding-right: 5px;
+  padding-right: 10px;
+
+  overflow-y: auto;
+
+  transition: all 0.2s ease-in-out;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Title = styled.text`
