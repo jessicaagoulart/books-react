@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# ioasys books
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
 
-## Available Scripts
+O projeto é um site desenvolvido em ReactJs para o Desafio Prático do processo seletivo da empresa Ioasys.
 
-In the project directory, you can run:
+O site possui duas telas, de Login e Home, além de modal de informações detalhadas de cada livro. Tudo totalmente responsivo.
 
-### `npm start`
+## Objetivos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+:heavy_check_mark: Login e acesso de Usuário já registrado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+:heavy_check_mark: Listagem de Livros
 
-### `npm test`
+:heavy_check_mark: Detalhamento do Livro<br><br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tela de Login
 
-### `npm run build`
+:white_medium_square: Formulário de Login com Email e Senha.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <img width="300" src="https://i.ibb.co/PtGsyj8/i-Phone-12-Pro-6-1-Mockup-Front-View.png" alt="i-Phone-12-Pro-6-1-Mockup-Front-View" border="0">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tela de Home
 
-### `npm run eject`
+:white_medium_square: Listagem dos livros com paginação.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="center">
+<img width="300" src="https://i.ibb.co/4sFLVg9/i-Phone-12-Pro-6-1-Mockup-Front-View-1.png" alt="i-Phone-12-Pro-6-1-Mockup-Front-View-1" border="0">
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Modal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+:white_medium_square: Informações detalhadas de cada livro.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="center">
+<img width="300" src="https://i.ibb.co/fX1qX6B/i-Phone-12-Pro-6-1-Mockup-Front-View-2.png" alt="i-Phone-12-Pro-6-1-Mockup-Front-View-2" border="0">
+</p>
 
-## Learn More
+### Ferramentas utilizadas: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+:white_medium_square: Yup para validação do formulário
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+:white_medium_square: Unform para construção do formulário
 
-### Code Splitting
+:white_medium_square: Redux para gerenciamento de estado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+:white_medium_square: Axios para requisições para API
 
-### Analyzing the Bundle Size
+:white_medium_square: Styled Components para estilização
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+:white_medium_square: React Router Dom para navegação
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
